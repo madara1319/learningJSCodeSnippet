@@ -44,7 +44,27 @@ function findGreatestValueInArrayOptimal(array) {
   return greatestValue;
 }
 
+//read about std::deque as its seems interesting aproach to array like structures with nice efficiency
+
+function selectionSort(array) {
+  let lowestValue = array[0];
+  let counter = array.length;
+  for (let i = 0; i < counter; i++) {
+    for (let j = 0; j < array.length; j++) {
+      if (array[i] < lowestValue) {
+        lowestValue = array[i];
+        temp = array[0];
+        array[0] = lowestValue;
+        array[i] = temp;
+      }
+      counter--;
+    }
+  }
+  return array;
+}
+
 // console.log(findGreatestValueInArray([1, 5, 6, 2, 7]));
 // console.log(findTheGreatestValueInArrayButFaster([1, 5, 23, 10, 2]));
 
-console.log(findGreatestValueInArrayOptimal([1, 5, 23, 10, 2]));
+// console.log(findGreatestValueInArrayOptimal([1, 5, 23, 10, 2]));
+console.log(selectionSort([5, 4, 3, 2, 1]));
