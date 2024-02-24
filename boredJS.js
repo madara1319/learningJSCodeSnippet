@@ -43,7 +43,7 @@ function findGreatestValueInArrayOptimal(array) {
   console.log(`steps number is ${steps}`);
   return greatestValue;
 }
-
+console.log("test");
 //read about std::deque as its seems interesting aproach to array like structures with nice efficiency
 
 function selectionSort(array) {
